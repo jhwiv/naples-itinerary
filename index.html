@@ -158,18 +158,21 @@
     /* ── Tabs ─────────────────────────────── */
     .tab-bar {
       display: flex; gap: 0; border-bottom: 2px solid var(--color-border);
-      background: var(--color-surface); padding: 0 20px;
-      overflow-x: auto; -webkit-overflow-scrolling: touch;
+      background: var(--color-surface); padding: 0;
     }
     .tab-btn {
-      background: none; border: none; border-bottom: 2px solid transparent;
-      margin-bottom: -2px; padding: 14px 18px; font-family: var(--font-body);
-      font-size: 13px; font-weight: 600; letter-spacing: 0.03em;
-      color: var(--color-text-muted); cursor: pointer; white-space: nowrap;
-      transition: color 180ms ease, border-color 180ms ease;
+      flex: 1; background: none; border: none; border-bottom: 3px solid transparent;
+      margin-bottom: -2px; padding: 14px 8px; font-family: var(--font-body);
+      font-size: 13px; font-weight: 600; text-align: center;
+      color: var(--color-text-muted); cursor: pointer;
+      transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
     }
-    .tab-btn:hover { color: var(--color-text); }
-    .tab-btn.active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+    .tab-btn:hover { color: var(--color-text); background: var(--color-surface-alt); }
+    .tab-btn.active { color: var(--color-primary); border-bottom-color: var(--color-primary); background: var(--color-surface); }
+    @media (max-width: 600px) {
+      .tab-btn { font-size: 12px; padding: 12px 4px; }
+      .tab-icon { display: none; }
+    }
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
@@ -245,9 +248,9 @@
 </section>
 
 <div class="tab-bar">
-  <button class="tab-btn active" data-tab="itinerary">📅 Itinerary</button>
-  <button class="tab-btn" data-tab="babcock">🏘 Babcock Ranch</button>
-  <button class="tab-btn" data-tab="lakewood">⛳ Lakewood Ranch</button>
+  <button class="tab-btn active" data-tab="itinerary"><span class="tab-icon">📅 </span>Itinerary</button>
+  <button class="tab-btn" data-tab="babcock"><span class="tab-icon">🏘 </span>Babcock Ranch</button>
+  <button class="tab-btn" data-tab="lakewood"><span class="tab-icon">⛳ </span>Lakewood Ranch</button>
 </div>
 
 <div class="tab-panel active" id="panel-itinerary">
