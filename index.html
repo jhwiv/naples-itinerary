@@ -155,6 +155,54 @@
     .payment-row.total { font-weight: 700; font-size: 16px; color: var(--color-primary); border-top: 2px solid var(--color-primary); padding-top: 14px; margin-top: 4px; }
     .payment-row .credit { color: var(--color-text-faint); }
 
+    /* ── Tabs ─────────────────────────────── */
+    .tab-bar {
+      display: flex; gap: 0; border-bottom: 2px solid var(--color-border);
+      background: var(--color-surface); padding: 0 20px;
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+    }
+    .tab-btn {
+      background: none; border: none; border-bottom: 2px solid transparent;
+      margin-bottom: -2px; padding: 14px 18px; font-family: var(--font-body);
+      font-size: 13px; font-weight: 600; letter-spacing: 0.03em;
+      color: var(--color-text-muted); cursor: pointer; white-space: nowrap;
+      transition: color 180ms ease, border-color 180ms ease;
+    }
+    .tab-btn:hover { color: var(--color-text); }
+    .tab-btn.active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── Tour Stop Card ───────────────────── */
+    .tour-stop {
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      border-radius: var(--radius); padding: 20px; margin-bottom: 16px; box-shadow: var(--shadow-sm);
+    }
+    .tour-stop + .tour-stop { }
+    .tour-stop h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .tour-stop .tour-meta { font-size: 13px; color: var(--color-accent); font-weight: 500; margin-bottom: 10px; }
+    .tour-stop p { font-size: 14px; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 10px; }
+    .tour-stop .tour-tip { font-size: 13px; color: var(--color-text); background: var(--color-accent-bg); padding: 10px 14px; border-radius: 6px; line-height: 1.55; }
+    .tour-stop .tour-tip strong { font-weight: 600; }
+    .tour-drive {
+      text-align: center; font-size: 13px; font-style: italic; color: var(--color-text-faint);
+      padding: 12px 0; margin-bottom: 16px;
+    }
+    .contact-card {
+      background: var(--color-accent-bg); border: 1px solid var(--color-accent);
+      border-radius: var(--radius); padding: 20px; margin-bottom: 24px;
+    }
+    .contact-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .contact-card .contact-subtitle { font-size: 13px; color: var(--color-text-muted); margin-bottom: 12px; }
+    .contact-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .contact-actions a {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 500;
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      color: var(--color-primary); transition: all 180ms ease;
+    }
+    .contact-actions a:hover { background: var(--color-primary); color: #fff; text-decoration: none; border-color: var(--color-primary); }
+
     /* ── Footer ───────────────────────────── */
     .site-footer { padding: 32px 0; text-align: center; font-size: 12px; color: var(--color-text-faint); border-top: 1px solid var(--color-border); }
 
@@ -196,6 +244,13 @@
   <div class="hero-travelers">James Wilkes &amp; Lisa Orazietti &nbsp;·&nbsp; United First &nbsp;·&nbsp; 6 days</div>
 </section>
 
+<div class="tab-bar">
+  <button class="tab-btn active" data-tab="itinerary">📅 Itinerary</button>
+  <button class="tab-btn" data-tab="babcock">🏘 Babcock Ranch</button>
+  <button class="tab-btn" data-tab="lakewood">⛳ Lakewood Ranch</button>
+</div>
+
+<div class="tab-panel active" id="panel-itinerary">
 <div class="container">
 
   <!-- ── Quick Reference ──────────────── -->
@@ -283,42 +338,7 @@
           <div class="event-time">~11:00 AM</div>
           <div class="event-content">
             <div class="event-title">🏘 Babcock Ranch Self-Tour (90 min)</div>
-            <div class="event-detail">~30 min drive from RSW. Lennar golf community comparison.</div>
-          </div>
-        </div>
-        <div class="event event--highlight">
-          <div class="event-time">Realtor</div>
-          <div class="event-content">
-            <div class="event-title">🧑‍💼 Beth Stark — NV Realty Group</div>
-            <div class="event-detail">Babcock Ranch resident · 13 yrs experience · 118 sales · 5.0★ reviews<br>
-              <span style="display:inline-flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-                <a href="tel:+15732705133">📞 Call</a>
-                <a href="sms:+15732705133">💬 Text</a>
-                <a href="mailto:bethstarkrealestate@gmail.com">✉️ Email</a>
-                <a href="https://maps.google.com/?q=42091+Cypress+Pkwy+Suite+5+Babcock+Ranch+FL+33982" target="_blank" rel="noopener">📍 Office</a>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="event">
-          <div class="event-time">11:00 AM</div>
-          <div class="event-content">
-            <div class="event-title" style="font-size:14px;">Stop 1: Discovery Center</div>
-            <div class="event-detail"><a href="https://maps.google.com/maps/dir/?api=1&destination=42850+Crescent+Loop+Punta+Gorda+FL+33982" target="_blank" rel="noopener">📍 Navigate to Founder's Square</a><br>42850 Crescent Loop, Punta Gorda · Speak with a Town Ambassador, pick up community map. Request directions to Babcock National &amp; Webb's Reserve Lennar models.</div>
-          </div>
-        </div>
-        <div class="event">
-          <div class="event-time">11:15 AM</div>
-          <div class="event-content">
-            <div class="event-title" style="font-size:14px;">Stop 2: Babcock National</div>
-            <div class="event-detail"><a href="https://maps.google.com/maps/dir/?api=1&destination=43101+Greenway+Blvd+Punta+Gorda+FL+33982" target="_blank" rel="noopener">📍 Navigate to Babcock National</a><br>43101 Greenway Blvd, Punta Gorda · Guard-gated. 18-hole Gordon Lewis course. Tell gate guard you're visiting the Lennar Sales Center. Focus on luxury estate models ($750k+). Park near clubhouse.</div>
-          </div>
-        </div>
-        <div class="event">
-          <div class="event-time">11:55 AM</div>
-          <div class="event-content">
-            <div class="event-title" style="font-size:14px;">Stop 3: Webb's Reserve</div>
-            <div class="event-detail"><a href="https://maps.google.com/maps/dir/?api=1&destination=44500+Webbs+Reserve+Blvd+Punta+Gorda+FL+33982" target="_blank" rel="noopener">📍 Navigate to Webb's Reserve</a><br>44500 Webb's Reserve Blvd, Punta Gorda · 18-hole Jack Nicklaus course, aqua driving range &amp; putt-putt. Newer construction. Lennar estates from mid-$700s to $1M+. High-end finishes and customizable features.</div>
+            <div class="event-detail">~30 min drive from RSW. See <a href="#" onclick="switchTab('babcock');return false;">Babcock Ranch tab</a> for stops &amp; realtor contact.</div>
           </div>
         </div>
         <div class="event">
@@ -462,8 +482,116 @@
 
   <footer class="site-footer">Generated by Perplexity Computer · April 2026</footer>
 </div>
+</div><!-- /panel-itinerary -->
+
+<!-- ── Babcock Ranch Tab ───────────────── -->
+<div class="tab-panel" id="panel-babcock">
+<div class="container">
+  <section class="section">
+    <div class="section-label">Babcock Ranch · 90-Minute Self-Tour</div>
+    <p style="font-size:14px;color:var(--color-text-muted);margin-bottom:24px;line-height:1.6;">~30 min drive from RSW. Lennar golf community comparison. Discovery Center → Babcock National → Webb's Reserve.</p>
+
+    <div class="contact-card">
+      <h3>🧑‍💼 Beth Stark — NV Realty Group</h3>
+      <div class="contact-subtitle">Babcock Ranch resident · 13 yrs experience · 118 sales · 5.0★ reviews</div>
+      <div class="contact-actions">
+        <a href="tel:+15732705133">📞 Call</a>
+        <a href="sms:+15732705133">💬 Text</a>
+        <a href="mailto:bethstarkrealestate@gmail.com">✉️ Email</a>
+        <a href="https://maps.google.com/?q=42091+Cypress+Pkwy+Suite+5+Babcock+Ranch+FL+33982" target="_blank" rel="noopener">📍 Office</a>
+      </div>
+    </div>
+
+    <div class="tour-stop">
+      <h3>Stop 1: Discovery Center</h3>
+      <div class="tour-meta">~11:00 AM · Founder's Square</div>
+      <p>Speak with a Town Ambassador, pick up community map. Request directions to Babcock National &amp; Webb's Reserve Lennar models.</p>
+      <p><a href="https://maps.google.com/maps/dir/?api=1&destination=42850+Crescent+Loop+Punta+Gorda+FL+33982" target="_blank" rel="noopener">📍 Navigate to Founder's Square</a><br><span style="font-size:13px;color:var(--color-text-faint);">42850 Crescent Loop, Punta Gorda, FL 33982</span></p>
+    </div>
+
+    <div class="tour-drive">↓ Drive ~5 min south on Babcock Ranch Rd</div>
+
+    <div class="tour-stop">
+      <h3>Stop 2: Babcock National</h3>
+      <div class="tour-meta">~11:15 AM · Guard-gated · Lennar estates $750K+</div>
+      <p>Established premier golf neighborhood. 18-hole Gordon Lewis course. Tell gate guard you're visiting the Lennar Sales Center. Focus on luxury estate models. Park near clubhouse.</p>
+      <p><a href="https://maps.google.com/maps/dir/?api=1&destination=43101+Greenway+Blvd+Punta+Gorda+FL+33982" target="_blank" rel="noopener">📍 Navigate to Babcock National</a><br><span style="font-size:13px;color:var(--color-text-faint);">43101 Greenway Blvd, Punta Gorda, FL 33982</span></p>
+    </div>
+
+    <div class="tour-drive">↓ Drive ~5 min to Webb's Reserve</div>
+
+    <div class="tour-stop">
+      <h3>Stop 3: Webb's Reserve</h3>
+      <div class="tour-meta">~11:55 AM · Flagship luxury · Lennar mid-$700s–$1M+</div>
+      <p>18-hole Jack Nicklaus course, aqua driving range &amp; putt-putt. Newer construction. High-end finishes and customizable features.</p>
+      <p><a href="https://maps.google.com/maps/dir/?api=1&destination=44500+Webbs+Reserve+Blvd+Punta+Gorda+FL+33982" target="_blank" rel="noopener">📍 Navigate to Webb's Reserve</a><br><span style="font-size:13px;color:var(--color-text-faint);">44500 Webb's Reserve Blvd, Punta Gorda, FL 33982</span></p>
+    </div>
+
+    <div class="tour-drive">↓ Depart ~12:30 PM → ~1 hr drive to Naples via I-75</div>
+
+  </section>
+</div>
+</div><!-- /panel-babcock -->
+
+<!-- ── Lakewood Ranch Tab ─────────────── -->
+<div class="tab-panel" id="panel-lakewood">
+<div class="container">
+  <section class="section">
+    <div class="section-label">Lakewood Ranch · 90-Minute Driving Tour</div>
+    <p style="font-size:14px;color:var(--color-text-muted);margin-bottom:8px;line-height:1.6;">Three communities, all in your price band ($750K–$1.2M), all with bundled or amenity-rich golf, large resort clubhouses, and zero-entry pools.</p>
+    <p style="font-size:14px;color:var(--color-text-muted);margin-bottom:24px;line-height:1.6;">Total time: ~90 min (65 min on-site + ~25 min driving). Gated access requires a licensed realtor — engage Adam first.</p>
+
+    <div class="contact-card">
+      <h3>🧑‍💼 Adam Miller — Realtor</h3>
+      <div class="contact-subtitle">Licensed realtor required for gated access. Start with a 15-min discovery call before the trip; meet him at Stop 1.</div>
+      <div class="contact-actions">
+        <a href="tel:+19412339722">📞 Call</a>
+        <a href="sms:+19412339722">💬 Text</a>
+      </div>
+    </div>
+
+    <div class="tour-stop">
+      <h3>Stop 1: Del Webb Lakewood Ranch</h3>
+      <div class="tour-meta">20 min · $600K–$1.1M · Massive amenity campus · Resort + lap pools · 55+</div>
+      <p>Del Webb's 30,000+ sq ft clubhouse is the amenity benchmark — resort pool, lap pool, fitness center, pickleball, and a full social calendar. Tour the clubhouse and one model. Note: 55+ active adult community.</p>
+      <div class="tour-tip"><strong>Adam's Guidance:</strong> Ask about resale vs. new build trade-offs and whether the 55+ restriction works for your situation. Adam can confirm current sub-$1.1M resale inventory.</div>
+      <p style="margin-top:12px;"><a href="https://maps.google.com/maps/dir/?api=1&destination=17501+E+State+Road+70+Lakewood+Ranch+FL+34202" target="_blank" rel="noopener">📍 Navigate to Del Webb</a><br><span style="font-size:13px;color:var(--color-text-faint);">17501 E State Road 70, Lakewood Ranch, FL 34202</span></p>
+    </div>
+
+    <div class="tour-drive">↓ Drive ~10 min north on Lorraine Rd to Asolo Blvd</div>
+
+    <div class="tour-stop">
+      <h3>Stop 2: Esplanade at Azario</h3>
+      <div class="tour-meta">20 min · $750K–$1.3M · Bundled golf (deeded homes) · Culinary Center · Spa</div>
+      <p>Newer Esplanade with a distinctive rolling 18-hole course (rare for SW Florida). Signature Culinary Center, wellness spa, resort pools, Bahama Bar. The flagship for "Esplanade Lifestyle."</p>
+      <div class="tour-tip"><strong>Adam's Guidance:</strong> Critical — verify which specific homes have deeded bundled golf (not every home does). Also ask about CDD fees: newer villages can add $1,500–$3,000+ annually on top of taxes. Have him flag worthwhile builder upgrades.</div>
+      <p style="margin-top:12px;"><a href="https://maps.google.com/maps/dir/?api=1&destination=4016+Santa+Caterina+Blvd+Lakewood+Ranch+FL+34211" target="_blank" rel="noopener">📍 Navigate to Esplanade at Azario</a><br><span style="font-size:13px;color:var(--color-text-faint);">4016 Santa Caterina Blvd, Lakewood Ranch, FL 34211</span></p>
+    </div>
+
+    <div class="tour-drive">↓ Drive ~12 min north via Uihlein Rd to The Masters Ave</div>
+
+    <div class="tour-stop">
+      <h3>Stop 3: Lakewood National Golf Club</h3>
+      <div class="tour-meta">25 min · $500K–$1.1M · Best value · Bundled golf (all homes) · 36 holes</div>
+      <p>The powerhouse of bundled golf: 36 holes (Commander &amp; Piper courses), grand clubhouse, full-service spa, tiki bar, zero-entry resort pool. Strongest amenity-to-price ratio of the day.</p>
+      <div class="tour-tip"><strong>Adam's Guidance:</strong> Have Adam break down the full monthly carrying cost — HOA fees can run $500+/mo but cover golf, amenities, and lawn care. Understand exactly what's bundled before falling for the lifestyle.</div>
+      <p style="margin-top:12px;"><a href="https://maps.google.com/maps/dir/?api=1&destination=17605+Lakewood+National+Pkwy+Lakewood+Ranch+FL+34211" target="_blank" rel="noopener">📍 Navigate to Lakewood National</a><br><span style="font-size:13px;color:var(--color-text-faint);">17605 Lakewood National Pkwy, Lakewood Ranch, FL 34211</span></p>
+    </div>
+
+  </section>
+</div>
+</div><!-- /panel-lakewood -->
 
 <script>
+// Tab switching
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + name));
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => switchTab(b.dataset.tab)));
+
+// Theme toggle
 (function(){
   const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
   let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
