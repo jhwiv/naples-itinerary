@@ -182,15 +182,17 @@
     .drive-links { display: flex; gap: 8px; flex-shrink: 0; }
     .drive-links a {
       display: inline-flex; align-items: center; justify-content: center;
-      width: 36px; height: 36px; border-radius: 8px; font-size: 13px;
+      width: 36px; height: 36px; border-radius: 8px;
       background: var(--color-surface); border: 1px solid var(--color-border);
-      color: var(--color-primary); transition: all 150ms ease;
+      transition: all 150ms ease;
     }
-    .drive-links a:hover { background: var(--color-primary); color: #fff; border-color: var(--color-primary); text-decoration: none; }
+    .drive-links a:hover { background: var(--color-surface-alt); border-color: var(--color-text-muted); text-decoration: none; }
+    .drive-links img { width: 20px; height: 20px; object-fit: contain; }
     @media (max-width: 600px) {
       .drive-route { font-size: 13px; }
       .drive-meta { font-size: 11px; }
-      .drive-links a { width: 34px; height: 34px; font-size: 12px; }
+      .drive-links a { width: 34px; height: 34px; }
+      .drive-links img { width: 18px; height: 18px; }
     }
 
     /* ── Status Badge ─────────────────────── */
@@ -278,12 +280,12 @@
 
   <div class="drive-row">
     <div class="drive-info">
-      <div class="drive-route">RSW Airport → Babcock Ranch</div>
-      <div class="drive-meta">Sat Apr 18 · ~30 min · Discovery Center, Founder's Square</div>
+      <div class="drive-route">RSW Airport → Beth Stark (Realtor)</div>
+      <div class="drive-meta">Sat Apr 18 · ~30 min · NV Realty, 42091 Cypress Pkwy, Babcock Ranch</div>
     </div>
     <div class="drive-links">
-      <a href="https://maps.google.com/maps/dir/?api=1&destination=42850+Crescent+Loop+Punta+Gorda+FL+33982" target="_blank" rel="noopener" title="Google Maps">📍</a>
-      <a href="https://waze.com/ul?q=42850+Crescent+Loop+Punta+Gorda+FL+33982&navigate=yes" target="_blank" rel="noopener" title="Waze">🟣</a>
+      <a href="https://maps.google.com/maps/dir/?api=1&destination=42091+Cypress+Pkwy+Suite+5+Babcock+Ranch+FL+33982" target="_blank" rel="noopener" title="Google Maps"><img src="icon-gmaps.png" alt="Google Maps"></a>
+      <a href="https://waze.com/ul?q=42091+Cypress+Pkwy+Babcock+Ranch+FL+33982&navigate=yes" target="_blank" rel="noopener" title="Waze"><img src="icon-waze.png" alt="Waze"></a>
     </div>
   </div>
 
@@ -293,8 +295,8 @@
       <div class="drive-meta">Sat Apr 18 · ~1 hr · via I-75 South</div>
     </div>
     <div class="drive-links">
-      <a href="https://maps.google.com/maps/dir/?api=1&origin=44500+Webbs+Reserve+Blvd+Punta+Gorda+FL+33982&destination=2600+Tiburon+Drive+Naples+FL" target="_blank" rel="noopener" title="Google Maps">📍</a>
-      <a href="https://waze.com/ul?q=2600+Tiburon+Drive+Naples+FL&navigate=yes" target="_blank" rel="noopener" title="Waze">🟣</a>
+      <a href="https://maps.google.com/maps/dir/?api=1&origin=44500+Webbs+Reserve+Blvd+Punta+Gorda+FL+33982&destination=2600+Tiburon+Drive+Naples+FL" target="_blank" rel="noopener" title="Google Maps"><img src="icon-gmaps.png" alt="Google Maps"></a>
+      <a href="https://waze.com/ul?q=2600+Tiburon+Drive+Naples+FL&navigate=yes" target="_blank" rel="noopener" title="Waze"><img src="icon-waze.png" alt="Waze"></a>
     </div>
   </div>
 
@@ -304,8 +306,8 @@
       <div class="drive-meta">Sun Apr 19 · ~15 min · 629 8th St S, Naples</div>
     </div>
     <div class="drive-links">
-      <a href="https://maps.google.com/maps/dir/?api=1&destination=629+8th+St+S+Naples+FL+34102" target="_blank" rel="noopener" title="Google Maps">📍</a>
-      <a href="https://waze.com/ul?q=629+8th+St+S+Naples+FL+34102&navigate=yes" target="_blank" rel="noopener" title="Waze">🟣</a>
+      <a href="https://maps.google.com/maps/dir/?api=1&destination=629+8th+St+S+Naples+FL+34102" target="_blank" rel="noopener" title="Google Maps"><img src="icon-gmaps.png" alt="Google Maps"></a>
+      <a href="https://waze.com/ul?q=629+8th+St+S+Naples+FL+34102&navigate=yes" target="_blank" rel="noopener" title="Waze"><img src="icon-waze.png" alt="Waze"></a>
     </div>
   </div>
 
@@ -315,8 +317,8 @@
       <div class="drive-meta">Mon Apr 20 · 6:30 PM · 600 Neapolitan Way, Naples</div>
     </div>
     <div class="drive-links">
-      <a href="https://maps.google.com/maps/dir/?api=1&destination=600+Neapolitan+Way+Naples+FL+34103" target="_blank" rel="noopener" title="Google Maps">📍</a>
-      <a href="https://waze.com/ul?q=600+Neapolitan+Way+Naples+FL+34103&navigate=yes" target="_blank" rel="noopener" title="Waze">🟣</a>
+      <a href="https://maps.google.com/maps/dir/?api=1&destination=600+Neapolitan+Way+Naples+FL+34103" target="_blank" rel="noopener" title="Google Maps"><img src="icon-gmaps.png" alt="Google Maps"></a>
+      <a href="https://waze.com/ul?q=600+Neapolitan+Way+Naples+FL+34103&navigate=yes" target="_blank" rel="noopener" title="Waze"><img src="icon-waze.png" alt="Waze"></a>
     </div>
   </div>
 
@@ -326,8 +328,8 @@
       <div class="drive-meta">Tue Apr 21 · 6:30 PM · 698 4th Ave S, Naples</div>
     </div>
     <div class="drive-links">
-      <a href="https://maps.google.com/maps/dir/?api=1&destination=698+4th+Ave+S+Naples+FL+34102" target="_blank" rel="noopener" title="Google Maps">📍</a>
-      <a href="https://waze.com/ul?q=698+4th+Ave+S+Naples+FL+34102&navigate=yes" target="_blank" rel="noopener" title="Waze">🟣</a>
+      <a href="https://maps.google.com/maps/dir/?api=1&destination=698+4th+Ave+S+Naples+FL+34102" target="_blank" rel="noopener" title="Google Maps"><img src="icon-gmaps.png" alt="Google Maps"></a>
+      <a href="https://waze.com/ul?q=698+4th+Ave+S+Naples+FL+34102&navigate=yes" target="_blank" rel="noopener" title="Waze"><img src="icon-waze.png" alt="Waze"></a>
     </div>
   </div>
 
@@ -337,8 +339,8 @@
       <div class="drive-meta">Wed Apr 22 · ~45 min · 10054 Gulf Center Dr</div>
     </div>
     <div class="drive-links">
-      <a href="https://maps.google.com/maps/dir/?api=1&destination=10054+Gulf+Center+Dr+Fort+Myers+FL" target="_blank" rel="noopener" title="Google Maps">📍</a>
-      <a href="https://waze.com/ul?q=10054+Gulf+Center+Dr+Fort+Myers+FL&navigate=yes" target="_blank" rel="noopener" title="Waze">🟣</a>
+      <a href="https://maps.google.com/maps/dir/?api=1&destination=10054+Gulf+Center+Dr+Fort+Myers+FL" target="_blank" rel="noopener" title="Google Maps"><img src="icon-gmaps.png" alt="Google Maps"></a>
+      <a href="https://waze.com/ul?q=10054+Gulf+Center+Dr+Fort+Myers+FL&navigate=yes" target="_blank" rel="noopener" title="Waze"><img src="icon-waze.png" alt="Waze"></a>
     </div>
   </div>
 
@@ -348,8 +350,8 @@
       <div class="drive-meta">Thu Apr 23 · ~15 min · Hertz drop-off, then Terminal</div>
     </div>
     <div class="drive-links">
-      <a href="https://maps.google.com/maps/dir/?api=1&destination=10995+Terminal+Access+Rd+Fort+Myers+FL+33913" target="_blank" rel="noopener" title="Google Maps">📍</a>
-      <a href="https://waze.com/ul?q=10995+Terminal+Access+Rd+Fort+Myers+FL+33913&navigate=yes" target="_blank" rel="noopener" title="Waze">🟣</a>
+      <a href="https://maps.google.com/maps/dir/?api=1&destination=10995+Terminal+Access+Rd+Fort+Myers+FL+33913" target="_blank" rel="noopener" title="Google Maps"><img src="icon-gmaps.png" alt="Google Maps"></a>
+      <a href="https://waze.com/ul?q=10995+Terminal+Access+Rd+Fort+Myers+FL+33913&navigate=yes" target="_blank" rel="noopener" title="Waze"><img src="icon-waze.png" alt="Waze"></a>
     </div>
   </div>
 
